@@ -1,0 +1,49 @@
+#include <stdio.h>
+//array และ การเชื่อม array
+int main()
+{
+    int i, a[5],b[5],c[10] ;//กำหนดขนาด array
+    printf("Enter array a: \n");
+    for(int i=0;i<5;i++){
+        printf("Please enter an integer: ");
+        scanf ("%d",&a[i]);
+    }//รับ inputs เข้ามาใน array a จาก i = 0 จนกว่า i = 4 (ใน array สมาชิกตัวที่ 1 จะเป็น index ที่ 0)
+    printf("Enter array b: \n");
+    for(int i=0;i<5;i++){
+        printf("Please enter an integer: ");
+        scanf ("%d",&b[i]);
+    }//ทำนองเดียวกันกับ array a
+    for(int i=0;i<10;i++){
+        if(i<5){c[i]=a[i];}
+        else{c[i]=b[i-5];}
+    }//เชื่อม array สอง array เข้าด้วยกัน
+    printf ("Array c: ");
+    for (i=0;i<10;i++)
+        printf ("%d ",c[i]);
+
+  printf ("\n");
+  return 0;
+}
+//array 2d
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    printf("Enter the number of rows or columns: ");
+    scanf("%d",&n);
+    int a[n][n];//กำหนดarray 2d กล่องแรก คือ แถว กล่องที่สอง คือ หลัก
+    for(int i=0;i<n;i++){
+        int b=i+1;
+            for(int j=0;j<n;j++){
+                a[i][j]=b;//แถวที่ i หลักที่ j จะมี่ค่าเท่ากับ b
+                b++;
+            }
+        b++;
+    }
+    for(int m=0;m<n;m++){
+        for(int k=0;k<n;k++)
+            printf("%2d ", a[m][k]);
+        printf("\n");
+    }
+ return 0;
+}
