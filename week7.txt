@@ -1,0 +1,23 @@
+คำสั่งพื้นฐาน
+mkdir (ชื่อ director) //  สร้าง directory
+dir หรือ ls // ดูรายการใน directory ที่กำลังทำงานอยู่
+ls -l // ดูรายการใน directory ที่กำลังทำงานอยู่อย่างละเอียด มีเฉพาะ bash
+d: / c: //เปลี่ยนไดร์ฟ
+cd //เปลี่ยน directory ที่กำลังทำงานอยู่
+
+git init //ทำทุกครั้งที่สร้าง directory ขึ้นมา
+touch //คำสั่งสร้างไฟล์ อย่าลืมเซฟไฟล์ด้วย
+git add (ชื่อไฟล์) //การเตรียมไฟล์ก่อน commit
+git commit -m "..." //คล้าย checkpoint หรือการ save ในการเล่นเกมว่าเราทำอะไรไปแล้วบ้าง
+git log --all --decorate --oneline --graph // เช็ค checkpoint ทั้งหมด
+git status //ตรวจสอบว่ามีไฟล์ใดยังไม่ commit บ้าง
+git config --global user.name "Your Name"
+git config --global user.email "yourmail@ku.th" //บอกข้อมูลส่วนตัว ทำครั้งเดียวพอ
+git remote add <ชื่อ remote เช่น origin> <git url> //เชื่อม github กับ เครื่องเรา
+git remote remove <ชื่อ remote> // ถ้าผิดพลาดสามารถลบได้
+git push -u origin master // นำไฟล์ขึ้น github ในครั้งแรก
+*อย่าลืมตรวจสอบ checkpoint ในเครื่องเรากับ github ว่าตรงกันหรือไม่*
+git push // นำไฟล์ขึ้น github ในครั้งถัดไป
+git clone <git-url> //ถ้าอยากนำโค้ดมาใช้ต่อ หรือ ลบ
+git checkout <commit-id> //นำ Checkpoint เก่ากลับมาทำงาน
+
