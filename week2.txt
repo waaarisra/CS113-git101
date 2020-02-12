@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+//double f; -> ตัวแปร global จะให้ค่าเริ่มต้นเป็น 0
+void main()
+{
+    char hour_str[3], min_str[3];//จองพท.ไว้ 4 bytes
+    int hour, min;//กำหนดตัวแปร
+
+    printf("Enter hour: ");
+    fgets(hour_str, 4, stdin);//รับinput
+
+    printf("Enter minute: ");
+    gets(min_str);//อีกรูปแบบของการรับinput สั้นกว่าง่ายกว่า ไม่จำเป็นต้องบอกขนาด array
+
+    hour = atoi(hour_str);//atoi=array to int การเปลี่ยนค่าในarrayให้เป็นจำนวนเต็ม
+    min = atoi(min_str);
+
+    printf("Time is %02d:%02d", hour, min);
+}
+//float ans3 = 1/2; //จะได้ 0 เพราะ 1 กับ 2 เป็น int พอหารกันก็จะได้คำตอบเป็น int เหมือนกัน (0.5->0) พอเจอ float อีกก็กลายเป็น 0.000000
