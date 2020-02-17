@@ -1,0 +1,59 @@
+//6210406670 Name Warisara Tanviriyavorakul
+#include<stdio.h> 
+#include<stdlib.h> 
+
+struct node { 
+    int data; 
+    struct node* next; 
+}; 
+void sort(struct node** head2, struct node* newnode) 
+{ 
+    struct node* current; 
+    if (*head2==NULL || (*head2)->data>=newnode->data) 
+    { 
+        newnode->next=*head2; 
+        *head2=newnode; 
+    } 
+    else
+    { 
+        current=*head2; 
+        while (current->next!=NULL && current->next->data < newnode->data) 
+        { 
+          current=current->next; 
+        } 
+        newnode->next=current->next; 
+        current->next=newnode; 
+    } 
+} 
+struct node *newNode(int newData) 
+{ 
+    struct node* newnode = (struct node*) malloc(sizeof(struct node));
+    newnode->data=newData; 
+    newnode->next=NULL;  
+    return newnode; 
+} 
+void print(struct node *head) 
+{ 
+    struct node *temp = head; 
+    while(temp != NULL) 
+    { 
+        printf("%d\n",temp->data); 
+        temp = temp->next; 
+    } 
+}   
+int main() 
+{ 
+    int num;
+    struct node* head = NULL; 
+    while(1){
+      scanf("%d",&num);
+      if(num>=0){
+        struct node *new_node = newNode(num); 
+        sort(&head, new_node);
+      }
+      else{
+        break;
+      }
+    }
+    print(head); 
+} 
